@@ -3,14 +3,15 @@
 ## exists, it is not re-calculated
 
 ## Function allows you to cache the inverse of a matrix so that it is accessible 
-## to the cacheSolve function and doesn't need to be re-calculated
+## to the cacheSolve function and doesn't need to be re-calculated if not necessary
 
 makeCacheMatrix <- function(x = matrix()) {
   inv <- NULL
   set <- function(y){
     x <<- y
     inv<<- NULL
-  }
+}
+
   get <- function() x
   setInverse <- function(inverse) inv<<- inverse
   getInverse <- function() inv
